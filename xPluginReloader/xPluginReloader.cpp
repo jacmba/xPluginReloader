@@ -1,6 +1,7 @@
 // Basic XPL skeleton
 
 #include <XPLMProcessing.h>
+#include <string>
 
 #if IBM
 	#include <Windows.h>
@@ -12,6 +13,13 @@
 
 // Called by XPlane when DLL is loaded - Returns 1 when successfully loaded
 PLUGIN_API int XPluginStart(char *name, char *signature, char *description) {
+	char n[] = "xPlugin Reloader";
+	char s[] = "net.jazbelt.xpluginreloader";
+	char d[] = "Reload all plugins from XPlane in-game menu";
+	strcpy_s(name, sizeof(n), n);
+	strcpy_s(signature, sizeof(s), s);
+	strcpy_s(description, sizeof(d), d);
+
 	return 1;
 }
 
